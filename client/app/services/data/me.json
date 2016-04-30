@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "username": "jlebourhis",
+  "email": "jeremi@example.com",
+  "firstname": "Jérémi",
+  "lastname": "Le Bourhis",
+  "isAdmin": true,
+  "description": "This is me ! :)",
+  "address1": "4 place Jussieu",
+  "address2": null,
+  "zipcode": "75004",
+  "city": "Paris",
+  "country": "France",
+  "phonenumber": "+33 6 99 99 99 99"
+}

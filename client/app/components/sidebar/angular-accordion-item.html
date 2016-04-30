@@ -1,0 +1,14 @@
+<div>
+    <div class="collapsible-item" ng-class="{open: isOpenned}"  ng-hide="isLink">
+        <div class="title" ng-class="{disabled: itemDisabled}" ng-click="toggleCollapsibleItem()">
+            {{itemTitle}}
+            <ng-md-icon class="collapsible-item-title-icon" icon="{{icon}}"  ng-attr-style="fill: {{color}}" size="{{size}}" options='{"duration": 400, "rotation": "{{rotation}}"}'></ng-md-icon>
+        </div>
+        <div class="body">
+            <div class="content" ng-transclude></div>
+        </div>
+    </div>
+    <div class="collapsible-item"  ng-show="isLink">
+        <a class="title" href="{{itemLink}}">{{itemTitle}}</a>
+    </div>
+</div>

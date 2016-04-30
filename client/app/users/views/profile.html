@@ -1,0 +1,151 @@
+<div class="main-section__content">
+    <div flex-container="row" flex-gutter="24">
+        <div flex-item="4" class="user_profile__infos">
+            <div class="card p+">
+                <strong class="fs-headline display-block user_profile__infos__username">{{ctrl.user.getFullname()}}</strong>
+                <span class="fs-subhead tc-black-2 display-block user_profile__infos__totem">{{ctrl.user.getFormattedTotem()}}</span>
+
+                <div class="paragraph fs-body-1 mt+">
+                    <p>
+                        {{ctrl.user.getDescription()}}
+
+                    </p>
+                </div>
+                <div class="paragraph fs-body-1 mt+" ng-if="ctrl.fullview">
+                    <p>
+                        <span class="user_profile__infos__important">Email</span> : {{ctrl.user.getEmail()}}<br>
+                        <span class="user_profile__infos__important">Téléphone</span> : {{ctrl.user.getPhoneNumber()}}<br>
+                        <span class="user_profile__infos__important">Adresse</span> : {{ctrl.user.getFormattedAddress()}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div flex-item="8">
+            <div class="card p+">
+                <span ng-if="ctrl.user.hasPromise()">Année de la promesse : {{ctrl.user.getYearPromise()}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<lx-dialog id="user-profile-dialog">
+    <lx-dialog-header>
+        <div class="toolbar bgc-primary pl++">
+            <span class="toolbar__label tc-white fs-title">
+                Modifier mon profil
+            </span>
+        </div>
+
+        <lx-tabs lx-panes-id="lorem-ipsum"
+                 lx-links="[{label: 'Informations générales'}, {label: 'Mes années scoutes'}]"
+                 lx-layout="inline"
+                 lx-theme="dark"
+                 lx-color="primary"
+                 lx-indicator="yellow"></lx-tabs>
+    </lx-dialog-header>
+
+    <lx-dialog-content>
+        <lx-tabs-panes id="lorem-ipsum">
+            <lx-tab-pane>
+                <div class="p+" flex-container="row" flex-gutter="24">
+                    <div flex-item>
+                        <lx-text-field lx-label="Prénom" lx-fixed-label="true" lx-icon="account-box" ng-disabled="true">
+                            <input type="text" ng-model="ctrl.userObject.firstname">
+                        </lx-text-field>
+
+                        <lx-text-field lx-label="Email" lx-fixed-label="true" lx-icon="email" ng-disabled="true">
+                            <input type="email" ng-model="ctrl.userObject.email">
+                        </lx-text-field>
+
+                        <lx-text-field lx-label="Téléphone" lx-fixed-label="true" lx-icon="phone">
+                            <input type="text" ng-model="ctrl.userObject.phonenumber">
+                        </lx-text-field>
+                    </div>
+                    <div flex-item>
+                        <lx-text-field lx-label="Nom" lx-fixed-label="true" lx-icon="account-box-outline"  ng-disabled="true">
+                            <input type="text" ng-model="ctrl.userObject.lastname">
+                        </lx-text-field>
+
+                        <lx-text-field lx-label="Pseudo" lx-fixed-label="true" lx-icon="pig" ng-disabled="true">
+                            <input type="text" ng-model="ctrl.userObject.username">
+                        </lx-text-field>
+
+                        <lx-text-field lx-label="Totem" lx-fixed-label="true" lx-icon="flower">
+                            <input type="text" ng-model="ctrl.userObject.totem">
+                        </lx-text-field>
+                    </div>
+                </div>
+                <div class="p+  pt0" flex-container="row" flex-gutter="24">
+                    <div flex-item="12">
+                        <lx-text-field lx-label="Description" lx-icon="comment-text-outline">
+                            <textarea ng-model="ctrl.userObject.description"></textarea>
+                        </lx-text-field>
+                    </div>
+                </div>
+                <div class="p+" flex-container="row" flex-gutter="24">
+                    <div flex-item="12">
+                        <lx-text-field lx-label="Adresse" lx-fixed-label="true" lx-icon="city">
+                            <input type="text" ng-model="ctrl.userObject.address.address1">
+                        </lx-text-field>
+
+                        <lx-text-field lx-label="Complément d'adresse" lx-fixed-label="true" lx-icon="city">
+                            <input type="text" ng-model="ctrl.userObject.address.address2">
+                        </lx-text-field>
+                    </div>
+                </div>
+                <div class="p+" flex-container="row" flex-gutter="24">
+                    <div flex-item="4">
+                        <lx-text-field lx-label="Code postal" lx-fixed-label="true" lx-icon="cow">
+                            <input type="text" ng-model="ctrl.userObject.address.zipcode">
+                        </lx-text-field>
+                    </div>
+                    <div flex-item="4">
+                        <lx-text-field lx-label="Ville" lx-fixed-label="true" lx-icon="ghost">
+                            <input type="text" ng-model="ctrl.userObject.address.city">
+                        </lx-text-field>
+                    </div>
+                    <div flex-item="4">
+                        <lx-text-field lx-label="Pays" lx-fixed-label="true" lx-icon="beach">
+                            <input type="text" ng-model="ctrl.userObject.address.country">
+                        </lx-text-field>
+                    </div>
+                </div>
+            </lx-tab-pane>
+            <lx-tab-pane>
+                <div class="p++">
+                    <lx-button lx-size="l" lx-color="black" lx-type="flat" >Ajouter une année</lx-button>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Année</th>
+                                <th>Je suis allé au camp</th>
+                                <th>J'ai fais ma promesse</th>
+                                <th>Unité</th>
+                                <th>Rôle</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <!--
+                            data-table__selectable-row--is-selected
+                            -->
+                            <tr ng-repeat="scoutyear in ctrl.userObject.scoutyears">
+                                <td>{{scoutyear.year}}</td>
+                                <td>{{scoutyear.gonecamp}}</td>
+                                <td>{{scoutyear.didpromise}}</td>
+                                <td>{{scoutyear.unitname}}</td>
+                                <td>{{scoutyear.role}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </lx-tab-pane>
+        </lx-tabs-panes>
+    </lx-dialog-content>
+
+    <lx-dialog-footer>
+        <lx-button lx-color="black" lx-type="flat" lx-dialog-close ng-click="ctrl.discardChanges()">Annuler</lx-button>
+        <lx-button lx-type="flat" lx-dialog-close ng-click="ctrl.updateUser()">Enregistrer</lx-button>
+    </lx-dialog-footer>
+</lx-dialog>

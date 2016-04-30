@@ -1,0 +1,141 @@
+///*------------------------------------*\
+//    #MODULES-COMMON-MAIN
+//\*------------------------------------*/
+
+// Main base styles
+.main {
+	padding: 60px 0 0;
+	height: 100%;
+}
+
+// Main section
+.main-section {
+	height: 100%;
+	@include media-query(desk) {
+		margin: 0 0 0 260px;
+	}
+}
+
+	// Main section title
+	.main-section__title {
+		display: block;
+		height: $base-spacing-unit * 8;
+	    padding: 0 $base-spacing-unit * 3;
+	    border-bottom: 1px solid #ddd;
+	    @include font-size(22px);
+	    font-weight: 500;
+        line-height: $base-spacing-unit * 8;
+	}
+
+	// Main section intro
+	.main-section__intro {
+		padding: $base-spacing-unit * 3;
+		@include font-size(22px);
+		font-weight: 300;
+
+		a {
+			color: $blue;
+			text-decoration: none;
+		}
+	}
+
+	// Main section content
+	.main-section__content {
+		padding: $base-spacing-unit * 3;
+
+		margin-bottom: 40px;
+		p > code {
+			padding: 2px 4px;
+			font-size: 90%;
+			color: $blue;
+			background-color: lighten($blue, 40%);
+			border-radius: 4px;
+		}
+
+		p > a {
+			color: $blue;
+			text-decoration: none;
+		}
+	}
+
+	.main-section__content__no_margin {
+		p > a {
+			color: $blue;
+			text-decoration: none;
+		}
+
+		height: 100%;
+	}
+
+	// Main section subtitle
+	.main-section__subtitle {
+		@include font-size(30px);
+		font-weight: 300;
+		line-height: 1;
+	}
+
+	.main-section__view {
+		position: absolute;
+		top: 123px;
+		bottom: 0px;
+		right: 0px;
+		left: 0;
+		overflow: scroll;
+
+		@include media-query(desk) {
+			left: 260px;
+		}
+
+	}
+
+	.main-section__content__map {
+		height: 100%;
+	}
+
+.row-container {
+	margin-bottom: 20px;
+}
+
+.progress {
+	position: relative;
+	left: 45%;
+}
+
+.img__card img {
+	height: 110px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.nav-right {
+	text-align: right;
+
+	button, a {
+		margin-right: 10px;
+	}
+}
+
+.map-canvas {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.user_profile__infos__important {
+	font-weight: bold;
+	font-family: "Roboto-Bold", "sans-serif";
+}
+
+.user_profile__infos__username {
+	min-height: 24px;
+}
+
+.user_profile__infos__totem {
+	min-height: 32px;
+}
+
+.user_profile__infos__description {
+	min-height: 80px;
+}

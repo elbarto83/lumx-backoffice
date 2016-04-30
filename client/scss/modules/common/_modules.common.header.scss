@@ -1,0 +1,78 @@
+///*------------------------------------*\
+//    #MODULES-COMMON-HEADER
+//\*------------------------------------*/
+
+
+// Header base styles
+.header {
+	@include position(fixed, 0 0 null 0);
+	z-index: 999;
+    height: 60px;
+    padding: $base-spacing-unit * 1.5;
+    background-color: $green-500;
+    @include z-depth(1);
+    @include clearfix;
+}
+
+// Main Nav
+.main-nav {
+	float: right;
+
+	ul {
+		@extend %bare-list;
+
+		li {
+			float: left;
+		}
+	}
+}
+
+.main-nav-left {
+  	float: left;
+	font-family: "Roboto-Bold", "Roboto", "sans-serif";
+	color: $white;
+}
+	.main-nav-left__title {
+		display: inline;
+		top: -6px;
+		position: relative;
+		margin-left: 4px;
+
+		@include media-query(portable) {
+			margin-left: 12px;
+		}
+	}
+	.main-nav-left__menu_btn {
+		display: none;
+		top: 3px;
+		@include media-query(portable) {
+			display: inline;
+		}
+	}
+
+.main-nav-right {
+	float: right;
+	margin-right: -6px;
+}
+	.main-nav-right__user {
+		padding-top: 3px;
+	}
+
+// angular-material-icon
+ng-md-icon {
+	position: relative;
+	margin-left: 1px;
+	background-repeat: no-repeat no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+	height: 24px;
+	width: 24px;
+}
+
+ng-md-icon svg {
+	pointer-events: none;
+	position: relative;
+	top: -4px;
+	left: -4px;
+}

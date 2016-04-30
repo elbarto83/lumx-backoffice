@@ -1,0 +1,31 @@
+{
+  "name": "lumx-backoffice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "Jérémi Le Bourhis <jeremi.leb@gmail.com>",
+  "url": "https://github.com/jeremlb/lumx-backoffice",
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "^1.5.3",
+    "angular-mock": "^1.0.0",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-open": "^0.2.3",
+    "grunt-sass": "^1.1.0",
+    "karma": "^0.13.22",
+    "karma-chai-sinon": "^0.1.5",
+    "karma-mocha": "^0.2.2",
+    "karma-mocha-reporter": "^2.0.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

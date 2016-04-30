@@ -1,0 +1,119 @@
+///*------------------------------------*\
+//    #MODULES-COMMON-SIDEBAR
+//\*------------------------------------*/
+
+$background-sidebar : $light-green-50;
+
+// Sidebar filter
+.sidebar-filter {
+    @include position(fixed, 0 0 0 0);
+    z-index: 998;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    @include transition-property(opacity);
+    @include transition-duration(0.6s);
+    @include transition-timing-function($ease-out-quint);
+}
+
+.sidebar-filter--is-shown {
+    @include media-query(portable) {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+// Sidebar base styles
+.sidebar {
+    z-index: 998;
+    width: 260px;
+    border-right: solid 1px #ddd;
+    background-color: #fff;
+    @include transition-property(box-shadow, transform);
+    @include transition-duration(0.6s);
+    @include transition-timing-function($ease-out-quint);
+    overflow: auto;
+
+    @include media-query(desk) {
+        @include position(fixed, 60px null 0 null);
+    }
+
+    @include media-query(portable) {
+        @include position(fixed, 60px null 0 -260px);
+    }
+}
+
+.sidebar--is-shown {
+    @include media-query(portable) {
+        box-shadow: 3px 0 6px rgba(0, 0, 0, 0.4);
+        @include transform(translateX(260px));
+    }
+}
+
+.collapsible-item .title {
+    cursor: pointer;
+    display: block;
+    width:100%;
+    padding: 0 $base-spacing-unit * 2;
+    @include font-size(14px);
+    font-weight: 700;
+    color: #333;
+    line-height: $base-spacing-unit * 6;
+    text-decoration: none;
+    &:hover {
+        background-color: $background-sidebar;
+    }
+}
+
+.collapsible-item-title-icon {
+    float: right;
+    right: 0;
+    top:$base-spacing-unit * 2.5;
+}
+
+.collapsible-item .title.disabled {
+    background: #eee;
+    color: #999;
+    cursor: text;
+}
+
+.collapsible-item .title.show {
+    background: $background-sidebar;
+}
+
+.collapsible-item .body {
+    position: relative;
+    max-height: 0;
+    overflow: hidden;
+
+    ul li {
+        list-style-type: none;
+        margin:0;
+        padding:0;
+        padding-left: 20px;
+        font-size: 10px;
+
+        &:hover {
+            background-color: $background-sidebar;
+        }
+    }
+    a {
+        display: block;
+        padding: 0 $base-spacing-unit * 2;
+        cursor: pointer;
+        @include font-size(12px);
+        font-weight: 700;
+        color: #333;
+        line-height: $base-spacing-unit * 6;
+        text-decoration: none;
+    }
+}
+.collapsible-item.open {
+    .title {
+        background-color: $background-sidebar;
+    }
+
+    .body {
+        max-height: 1000px;
+    }
+}

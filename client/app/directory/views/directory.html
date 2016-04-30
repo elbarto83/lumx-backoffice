@@ -1,0 +1,33 @@
+<div class="main-section__content">
+    <div flex-container="row" flex-gutter="24" class="p+">
+        <div flex-item>
+            <div class="card">
+                <div class="toolbar">
+                    <lx-search-filter>
+                        <input type="text" ng-model="ctrl.searchFilter" placeholder="Rechercher">
+                    </lx-search-filter>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div flex-container="row" flex-gutter="24" class="p+">
+        <div flex-item="4" ng-repeat="user in ctrl.users | filter:ctrl.searchFilter:strict">
+            <div class="card">
+                <div class="p+">
+                    <strong class="fs-headline display-block user_profile__infos__username">{{user.fullname}}</strong>
+                    <span class="fs-subhead tc-black-2 display-block user_profile__infos__totem">{{user.formattedtotem}}</span>
+
+                    <div class="paragraph fs-body-1 mt+ user_profile__infos__description">
+                        <p>
+                          {{user.description | userDescriptionFilter}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card__actions">
+                    <lx-button lx-color="black" lx-type="flat" ui-sref="user-profile({username: user.username})">Voir profil</lx-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

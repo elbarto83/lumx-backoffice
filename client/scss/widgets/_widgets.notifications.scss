@@ -1,0 +1,55 @@
+.notifications__container {
+  margin-bottom: -8px;
+  overflow: scroll;
+  max-height: 310px;
+}
+
+.notification__item {
+  @extend .card;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.notification__item__new {
+  background-color: $grey-200;
+}
+  .notification__item__img {
+    margin-top: 2px;
+    display: inline-flex;
+    margin-bottom: 3px;
+  }
+
+  .notification__item__text {
+    font-family: "Roboto", "sans-serif";
+    font-size: 12px;
+    display: inline-flex;
+
+    @include media-query(desk) {}
+
+    span {
+      font-family: "Roboto-Bold", "Roboto", "sans-serif";
+      font-weight: bold;
+      margin-left:2px;
+      margin-right: 2px;
+    }
+  }
+
+$warning-color: #E75753;
+.notifications-label {
+  width: 16px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  font-size: 9px;
+  right: 17px;
+  top: 8px;
+  font-family: "Roboto-Bold", "Roboto", "sans-serif";
+  color: $white;
+  background-color: $warning-color;
+}

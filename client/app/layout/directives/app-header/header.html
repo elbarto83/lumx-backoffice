@@ -1,0 +1,27 @@
+<header class="header">
+    <nav class="main-nav-left" ng-class="">
+        <button class="main-nav-left__menu_btn btn btn--s btn--white btn--icon" lx-ripple>
+            <ng-md-icon icon="{{ctrl.icon}}"  ng-attr-style="fill: 'white'" size="30" options='{"duration": 375, "rotation": "none"}' ng-click="ctrl.clickIconMorph()"></ng-md-icon>
+        </button>
+        <h1 class="main-nav-left__title">#SSB40</h1>
+    </nav>
+    <nav class="main-nav-right">
+        <app-notif-widget></app-notif-widget>
+        <lx-dropdown lx-position="right">
+            <lx-dropdown-toggle>
+                <lx-button class="main-nav-right__user"lx-color="white" lx-type="flat">
+                    <i class="icon icon--s icon--white icon--flat mdi mdi-account"></i>
+                    <span style="color:white;font-family:'Roboto';">{{ctrl.username}}</span>
+                </lx-button>
+            </lx-dropdown-toggle>
+
+            <lx-dropdown-menu>
+                <ul>
+                    <li><a class="dropdown-link" ui-sref="user-parameters">Mon profil</a></li>
+                    <li><a class="dropdown-link" href="/profile/change-password">Changer de mot de passe</a></li>
+                    <li><a class="dropdown-link" href="/logout">Se déconnecter</a></li>
+                </ul>
+            </lx-dropdown-menu>
+        </lx-dropdown>
+    </nav>
+</header>

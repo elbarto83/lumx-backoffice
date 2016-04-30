@@ -1,0 +1,17 @@
+<div class="sidebar-filter" ng-class="{ 'sidebar-filter--is-shown': ctrl.isShow }" ng-click="ctrl.hidesidebar()"></div>
+<div class="sidebar" ng-class="{ 'sidebar--is-shown': ctrl.isShow }">
+    <ang-accordion>
+        <collapsible-item item-title="Tableau de bord" ui-sref="dashboard" item-link=""></collapsible-item>
+        <collapsible-item item-title="Carte des camps" ui-sref="map" item-link=""></collapsible-item>
+        <collapsible-item item-title="Annuaire scout" ui-sref="directory" item-link=""></collapsible-item>
+        <collapsible-item item-title="Mes réseaux" ui-sref="network" item-link=""></collapsible-item>
+        <collapsible-item item-title="Administration" ng-show="ctrl.admin">
+            <ul>
+                <li><a ui-sref="admin-dashboard">Vue d'ensemble</a></li>
+                <li><a ui-sref="admin-users">Gestion des utilisateurs</a></li>
+                <li><a ui-sref="admin-comments">Gestion des commentaires</a></li>
+                <li><a ui-sref="admin-places">Gestion des places</a></li>
+            </ul>
+        </collapsible-item>
+    </ang-accordion>
+</div>

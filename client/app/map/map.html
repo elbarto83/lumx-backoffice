@@ -1,0 +1,45 @@
+<div class="main-section__content__no_margin">
+    <div ui-map class="main-section__content__map"></div>
+</div>
+<lx-dialog id="test-dialog">
+    <lx-dialog-header>
+        <div class="toolbar bgc-green-500 pl++">
+            <span class="toolbar__label tc-white fs-title">
+                Détail d'un lieu
+            </span>
+
+            <div class="toolbar__right">
+                <lx-button lx-size="l" lx-color="white" lx-type="icon" ng-click="vm.addPerson()">
+                    <i class="mdi mdi-plus"></i>
+                </lx-button>
+            </div>
+        </div>
+
+        <lx-tabs lx-panes-id="lorem-ipsum"
+                 lx-links="[{label: 'Description'}, {label: 'Commentaires'}]"
+                 lx-layout="inline"
+                 lx-theme="dark"
+                 lx-color="green"
+                 lx-indicator="white"></lx-tabs>
+    </lx-dialog-header>
+
+    <lx-dialog-content>
+        <lx-tabs-panes id="lorem-ipsum">
+            <lx-tab-pane>
+                <div class="p++">
+                    <p>Lorem Ipsum Content 1</p>
+                </div>
+            </lx-tab-pane>
+
+            <lx-tab-pane>
+                <div class="p++">
+                    <p>Lorem Ipsum Content 2</p>
+                </div>
+            </lx-tab-pane>
+        </lx-tabs-panes>
+    </lx-dialog-content>
+
+    <lx-dialog-footer>
+        <lx-button lx-type="flat" lx-dialog-close>Ok</lx-button>
+    </lx-dialog-footer>
+</lx-dialog>
